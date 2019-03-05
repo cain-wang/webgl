@@ -41,6 +41,7 @@ function main() {
   clearCanvas(gl, 0, 0, 0, 1);
   const positionAttribLocation = gl.getAttribLocation(program, "a_position");
   gl.enableVertexAttribArray(positionAttribLocation);
+  gl.vertexAttribPointer(positionAttribLocation, 2, gl.FLOAT, false, 0, 0);
   const resolutionUniformLocation = gl.getUniformLocation(
     program,
     "u_resolution"
@@ -54,7 +55,6 @@ function main() {
     .forEach(() => {
       const positionData = createRandomRectVertices(width, height);
       gl.bufferData(gl.ARRAY_BUFFER, positionData, gl.STATIC_DRAW);
-      gl.vertexAttribPointer(positionAttribLocation, 2, gl.FLOAT, false, 0, 0);
       gl.uniform2f(resolutionUniformLocation, width, height);
       gl.uniform4f(
         colorUniformLocation,
