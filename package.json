@@ -1,0 +1,28 @@
+{
+  "name": "webgl",
+  "version": "1.0.0",
+  "description": "Try out basic and new APIs for WebGL.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "http-server src -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cain-wang/webgl.git"
+  },
+  "keywords": [
+    "webgl"
+  ],
+  "author": "cain@uber.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cain-wang/webgl/issues"
+  },
+  "homepage": "https://github.com/cain-wang/webgl#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
