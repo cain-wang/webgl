@@ -1,13 +1,13 @@
-function resizeViewport(gl, canvas) {
+export function resizeViewport(gl, canvas) {
   gl.viewport(0, 0, canvas.width, canvas.height);
 }
 
-function clearCanvas(gl) {
-  gl.clearColor(0, 0, 0, 1);
+export function clearCanvas(gl, ...color) {
+  gl.clearColor(...color);
   gl.clear(gl.COLOR_BUFFER_BIT);
 }
 
-function createShader(gl, type, source) {
+export function createShader(gl, type, source) {
   const shader = gl.createShader(type);
   gl.shaderSource(shader, source);
   gl.compileShader(shader);
@@ -22,7 +22,7 @@ function createShader(gl, type, source) {
   throw new Error(log);
 }
 
-function createProgram(gl, vertexShaderSource, fragmentShaderSource) {
+export function createProgram(gl, vertexShaderSource, fragmentShaderSource) {
   const program = gl.createProgram();
   gl.attachShader(
     program,
